@@ -1,12 +1,10 @@
-- hosts: all
-  connection: local
+- hosts: localhost
   become: true
   tasks:
-  - name: Install htop
-    apt: name=htop
-
-  - name: Install vim
-    apt: name=vim
-   
-  - name: Install tmux
-    apt: name=tmux
+  - name: Install packages
+    apt: name={{item}}
+    with_items:
+      - htop
+      - vim
+      - tmux
+      - git
