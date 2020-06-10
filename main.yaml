@@ -8,3 +8,4 @@
       - vim
       - tmux
       - git
+      - libxml2
